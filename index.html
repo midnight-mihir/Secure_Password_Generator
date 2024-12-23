@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Generator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <div class="header">
+        <div class="logo">
+            <i class="fa-solid fa-lock"></i>
+            <h2>Secure Password Generator</h2>
+        </div>
+        <div class="theme-toggle">
+            <button id="theme-toggle-button" type="button">
+                <i class="fa-solid fa-moon"></i>
+            </button>
+        </div>
+    </div>
+    <div class="main">
+        <div class="container">
+            <header>
+                <h1>Secure Password Generator</h1>
+                <p>Generate strong, secure passwords instantly with our reliable web app!</p>
+            </header>
+
+            <div class="password-section">
+                <input type="text" id="password" readonly placeholder="Your password will appear here">
+                <span id="password-strength">Weak</span>
+            </div>
+
+            <div class="slider-section">
+                <div class="pass-length">
+                    <label>Password Length: <span id="length-value">8</span></label>
+                </div>
+                <div class="slider-controls">
+                    <button id="decrease-length"><i class="fa-solid fa-minus"></i></button>
+                    <input type="range" id="password-length" min="4" max="32" value="8">
+                    <button id="increase-length"><i class="fa-solid fa-plus"></i></button>
+                </div>
+            </div>
+
+            <div class="button-section">
+                <button id="regenerate">Regenerate</button>
+                <button id="copy-to-clipboard">Copy to Clipboard</button>
+                <p id="message"></p>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="footer-content">
+            <p>Made with ❤️ by Mihir</p>
+            <p>&copy; 2024 Secure Password Generator. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,285 @@
+/* Base styles */
+* {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Light mode variables */
+:root {
+    --background-light: #ffffff;
+    --text-light: #000000;
+    --element-light: #f8f9fa;
+    --border-light: #000000;
+
+    --background-dark: #121212;
+    --text-dark: #ffffff;
+    --element-dark: #1e1e1e;
+    --border-dark: #ffffff;
+}
+
+/* Global Styles */
+body {
+    background-color: var(--background-light);
+    color: var(--text-light);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dark-mode {
+    background-color: var(--background-dark);
+    color: var(--text-dark);
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.header .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.header h2 {
+    font-size: 1.5em;
+}
+
+
+.theme-toggle button {
+    background: none;
+    border: none;
+    font-size: 1.5em;
+    cursor: pointer;
+    color: var(--text-light);
+}
+
+.dark-mode .theme-toggle button {
+    color: var(--text-dark);
+}
+
+/* Main Container */
+.container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 50px 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: var(--element-light);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    /* border: 1px solid black; */
+}
+
+.container h1 {
+    font-size: 2.5em;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.container p {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.dark-mode .container {
+    background-color: var(--element-dark);
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+}
+
+/* Password Section */
+.password-section {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.password-section input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid var(--border-light);
+    border-radius: 5px;
+    background-color: var(--element-light);
+    color: var(--text-light);
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.dark-mode .password-section input {
+    background-color: var(--element-dark);
+    color: var(--text-dark);
+    border-color: var(--border-dark);
+}
+
+/* Slider Section */
+.slider-section {
+    margin: 30px 0;
+}
+
+.pass-length {
+    margin-bottom: 10px;
+}
+
+.slider-controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.slider-controls button {
+    width: 30px;
+    height: 30px;
+    border: none;
+    background: none;
+    color: var(--text-light);
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Dark Mode Styles for Slider Controls */
+.dark-mode .slider-controls button>i {
+    color: white;
+}
+
+
+input[type="range"] {
+    width: 100%;
+    background: var(--element-light);
+    height: 10px;
+    border-radius: 5px;
+    outline: none;
+    transition: background-color 0.3s ease;
+}
+
+.dark-mode input[type="range"] {
+    background: var(--element-dark);
+}
+
+/* Buttons */
+
+.button-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.button-section button {
+    font-weight: 600;
+    width: 48%;
+    padding: 12px;
+    border: 1px solid var(--border-light);
+    background-color: var(--background-dark);
+    color: var(--text-dark);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.dark-mode .button-section button {
+    background-color: var(--element-light);
+    color: var(--text-light);
+    border-color: var(--border-light);
+}
+
+.button-section p {
+    font-size: 0.9em;
+    color: var(--text-light);
+    transition: color 0.3s ease;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.dark-mode .button-section p {
+    color: var(--text-dark);
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .container {
+        max-width: 90%;
+        margin: 20px auto;
+        padding: 30px 10px;
+    }
+
+    .container h1 {
+        font-size: 2em;
+    }
+
+    .header h2 {
+        font-size: 1.2em;
+    }
+
+    .slider-section {
+        margin: 20px 0;
+    }
+
+    .slider-controls button {
+        width: 25px;
+        height: 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .container h1 {
+        font-size: 1.8em;
+    }
+
+    .password-section {
+        flex-direction: column;
+    }
+
+    .password-section input {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .slider-section {
+        margin: 15px 0;
+    }
+
+    .slider-controls button {
+        width: 20px;
+        height: 20px;
+    }
+
+    .button-section button {
+        width: 100%;
+    }
+}
+
+/* Footer Styles */
+.footer {
+    background-color: var(--element-light);
+    color: var(--text-light);
+    padding: 20px 0;
+    text-align: center;
+    font-size: 0.9em;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dark-mode .footer {
+    background-color: var(--element-dark);
+    color: var(--text-dark);
+}
+
+.footer-content p {
+    margin: 5px 0;
+}
+
+/* Responsive Footer */
+@media (max-width: 768px) {
+    .footer {
+        font-size: 0.8em;
+        padding: 15px 0;
+    }
+}
